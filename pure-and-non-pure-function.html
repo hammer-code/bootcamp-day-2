@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    let person = { name: 'Adi' };
+
+    function changeName(name) {
+      person.name = name;
+    }
+
+    console.log(person);
+
+    function updatePerson(name) {
+      return Object.assign({}, person, { name });
+    }
+
+    var updatedPerson = updatePerson('Adi');
+    console.log(person === updatePerson);
+
+    let people = ['Adi', 'Angga', 'Gilang'];
+
+    people.push('John');
+
+    console.log(people);
+  </script>
+</body>
+</html>

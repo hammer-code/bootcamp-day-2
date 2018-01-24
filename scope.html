@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Scope</title>
+</head>
+<body>
+  <h1>Buka js console di devtools</h1>
+  <script>
+    let age = 17;
+    let message = 'Hello World';
+
+    if (true) {
+      console.log(message);
+
+      let pesan = 'Halo Dunia';
+
+      if (true) {
+        console.log(pesan);
+      }
+    }
+
+    function doSomething() {
+      return age * 2;
+    }
+
+    console.log(doSomething());
+    console.log(pesan);
+  </script>
+</body>
+</html>

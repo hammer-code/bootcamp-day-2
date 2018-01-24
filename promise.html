@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Promise</title>
+</head>
+<body>
+  <h1>Buka JavaScript console di Devtools</h1>
+  <script>
+    console.log('Awal program');
+
+    fetch('https://twitter.com/anak-ganteng-bla-bla')
+      .then(function (response) {
+        console.log('Callback ini dipanggil ketika proses ambil data berhasil');
+        return response.json();
+      })
+      .then((data) => {
+        console.log('Callback ini dipanggil ketika proses konversi response ke JSON berhasil');
+        console.log('Data yang didapatkan', data);
+      })
+      .catch((error) => {
+        console.log('Callback ini dipanggil ketika operasi fetch gagal');
+        console.log(`Gagal karena: ${error.message}`);
+      });
+
+    console.log('Akhir program');
+  </script>
+</body>
+</html>

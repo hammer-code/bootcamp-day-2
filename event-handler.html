@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Event Handler</title>
+</head>
+<body>
+  <div id="fancy-text">1</div>
+  <button id="fancy-button">Tambah</button>
+
+  <script>
+    const divEl = document.querySelector('#fancy-text');
+    const buttonEl = document.querySelector('#fancy-button');
+
+    let count = parseInt(divEl.innerHTML);
+
+    var handlerA = function () {
+      alert('Halo');
+    };
+
+    let handlerB = () => {
+      count += 1;
+      console.log('Count skarang adalah', count)
+    };
+
+    const handlerC = (event) => {
+      let color = count % 2 === 0 ? 'red' : 'blue';
+
+      event.target.style = 'background-color: ' + color;
+      // buttonEl.target.style = 'color: ' + color;
+      // console.log(event.target === buttonEl)
+
+      count++;
+
+      divEl.innerHTML = count;
+    };
+
+    buttonEl.addEventListener('click', handlerB);
+  </script>
+</body>
+</html>

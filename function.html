@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Function</title>
+</head>
+<body>
+  <h1>Buka js console di devtools</h1>
+  <script>
+    function multiplier(factor) {
+      return function (number) {
+        return factor * number;
+      };
+    }
+
+    var kaliDuaFn = multiplier(2);
+    var kaliTigaFn = multiplier(3);
+
+    console.log(kaliDuaFn(10));
+    console.log(kaliTigaFn(20));
+  </script>
+</body>
+</html>

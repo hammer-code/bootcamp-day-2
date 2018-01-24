@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Array</title>
+</head>
+<body>
+  <h1>Buka JS console di devtools</h1>
+  <script>
+    var sales = [500, 200, 100, 150, 360, 700, 680];
+    var number = 5;
+
+    var underFiveHundred = sales.filter(sale => sale < 500);
+    var multipliedByTwo = sales.map(sale => sale * number);
+
+    const niCallbackLho = function (accumulation, sale) {
+      return accumulation + sale;
+    };
+
+    var totalSales = sales.reduce(niCallbackLho, 0);
+
+    console.log('sales', sales);
+    console.log('underFiveHundred', underFiveHundred);
+    console.log('multipliedByTwo', multipliedByTwo);
+    console.log('totalSales', totalSales);
+
+    sales.forEach((element, i) => {
+      console.log(`index ke ${i} memiliki element ${element}`);
+    });
+
+    // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array
+  </script>
+</body>
+</html>
